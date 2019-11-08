@@ -19,6 +19,10 @@ const todos = (todos=[], action) => {
             todos.splice(idx,1)
             return [...todos]
         case ADD_TODO:
+            if(todos.find(todo=> todo.action === action.action)){
+                return todos
+            }
+            
             return [
                 ...todos,
                 {

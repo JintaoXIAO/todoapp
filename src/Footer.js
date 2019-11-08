@@ -3,7 +3,7 @@ import {ALL, ACTIVE, COMPLETED} from './visibilityFilter'
 
 
 let Footer = ({todos, clear, filter, filteredShow}) => <footer className="footer">
-    <span className="todo-count"><strong>{todos.length}</strong>item left</span>
+    <span className="todo-count"><strong>{todos.filter(todo=>!todo.completed).length}</strong>item left</span>
     <ul className="filters">
         <li>
             <a className={filter===ALL? "selected":""} href="#/" onClick={()=>filteredShow(ALL)}>All</a>
